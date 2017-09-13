@@ -1,0 +1,21 @@
+1. download Scrapy-1.4.0-py2.py3-none-any.whl from http://www.lfd.uci.edu/~gohlke/pythonlibs/, put it in the C:\...\Python36\Lib\site-packages
+
+2. cmd: C:\...\Python36\Lib\site-packages> pip install Scrapy-1.4.0-py2.py3-none-any.whl
+
+3. during the installation, import Twisted reported an error, no module named Twisted
+
+4. download Twisted-17.5.0-cp36-cp36m-win_amd64.whl, and install it
+
+5. reinstall scrapy, reported inport lxml error, no module named lxml
+
+6. download lxml-3.8.0-cp36-cp36m-win_amd64.whl, and install it
+
+7. reinstall scrapy, this time successed
+
+8. build a wikiSpider project in the scapy file
+
+9. RUN:  cmd: D:\03-CS\scrapy\wikiSpider>scrapy crawl article. return an error of import win32api failed, do not find this module.
+
+10. copy the pywintypes36.dll and pythoncom36.dll in C:\...\Python36\Lib\site-packages\pywin32_system32 to C:\...\Python36\Lib\site-packages\win32
+
+11. RUN: cmd: D:\03-CS\scrapy\wikiSpider>scrapy crawl article.  SUCCESSED!!!
