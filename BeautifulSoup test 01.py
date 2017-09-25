@@ -12,14 +12,15 @@ soup = BeautifulSoup(html,'html.parser')
 #print (soup.head)    #bs4.element tag type
 #print (type(soup.head))
 #print (soup.head.text)
+#print (soup.head.get_text())
 
-namelist = soup.findAll('span',{'class':'green'})  #or {'class':{'green,'red'}}
-#print (namelist)  # output a list, element contain tags
+namelist = soup.findAll('span',{'class':'green'})  #or ('span', class_='green')
+print (namelist)  # output a list, element contain tags
 
 for name in namelist:
     print(name.get_text())   #Anna Pavlovna.  get_text() could remove the tags
     #print (name)   #<span class="green">Anna Pavlovna</span>
-    #print (name.text())    # TypeError: 'str' object is not callable
+    print (name.text)    #same as name.get_text()
 
 
 headlist = soup.findAll({'h1','h2','h3'})

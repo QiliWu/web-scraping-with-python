@@ -1,5 +1,3 @@
-from urllib.request import urlopen
-from bs4 import BeautifulSoup
 import pymysql
 
 conn = pymysql.connect(host='127.0.0.1', port=3306, user='root', passwd='wuqili2017', db='mysql', charset='utf8')
@@ -20,6 +18,7 @@ def getLinks(fromPageId):
 
 def constructDict(currentPageId):
     links = getLinks(currentPageId)
+    #print('links: ',links)
     if links:
         return dict(zip(links, [{}]*len(links)))
 
@@ -32,17 +31,17 @@ def searchDepth(targetPageId, currentPageId, linkTree, depth):
             return {}
     if targetPageId in linkTree.keys():
         print("TARGET "+str(targetPageId)+" FOUND")
-        raise SolutionFound("PAGE: "+str(currentPageId))
+        raise SolutionFound("PAGE 1: "+str(currentPageId))
     for branchKey, branchValue in linkTree.items():
         try:
-            linkTree[branchKey] = searchDepth(targetPageId,  branchKey, branchValue, depth-1)
+            linkTree[branchKey] = searchDepth(targetPageId, branchKey, branchValue, depth-1)
         except SolutionFound as e:
-            print(e.message)
-            raise SolutionFound("PAGE: "+str(currentPageId))
+            print('11', e.message)
+            raise SolutionFound("PAGE 2: "+str(currentPageId))
     return linkTree
 
 try:
-    searchDepth(400, 1, {}, 4)
+    searchDepth(344, 1, {}, 4)
     print("No solution found")
 except SolutionFound as e:
     print(e.message)

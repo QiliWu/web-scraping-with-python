@@ -6,11 +6,15 @@ from bs4 import BeautifulSoup
 wordFile = urlopen("http://pythonscraping.com/pages/AWordDocument.docx").read()
 wordFile = BytesIO(wordFile)
 document = ZipFile(wordFile)
-xml_content = document.read(('word/document.xml'))
-print(xml_content.decode('utf-8'))
+xml_content = document.read('word/document.xml')
+#print(xml_content)   #bytes
+#print(xml_content.decode('utf-8'))
+#print(type(xml_content.decode('utf-8')))   #str
 
 soup = BeautifulSoup(xml_content.decode('utf-8'),'html.parser')
 textStrings = soup.findAll('w:t')
+print(soup)
+print(textStrings)
 for testItem in textStrings:
     closeTag = ''
     try:

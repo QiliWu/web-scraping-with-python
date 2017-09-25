@@ -21,9 +21,9 @@ def getAbsoulteURL(baseUrl, source):
 
 def getDownloadPath(baseUrl, absoluteUrl, downloadDirectory):
     path = absoluteUrl.replace('www.','')
-    print ('1  '+path)
+    print(path)
     path = path.replace(baseUrl,'')
-    print('2  '+path)
+    print(path)
     path = downloadDirectory+path
     directory = os.path.dirname(path)
 

@@ -3,17 +3,17 @@ from nltk.book import *
 from nltk import bigrams
 from nltk import ngrams
 
-fdist = FreqDist(text6)
-print(fdist.most_common(10))
-print(type(fdist))
-print(fdist['Grail'])
+fdist = FreqDist(text6)   # 计算每个单词出现的次数，给出字典，{key:val}={char:count}
+print(fdist.most_common(10))    # 10个出现最多次的次
+print(type(fdist))    #<class 'nltk.probability.FreqDist'>
+print(fdist['Grail'])    # 给出'Grail'出现的次数
 
-bigrams = bigrams(text6)
-bigramsDist = FreqDist(bigrams)
-print(bigramsDist[('Sir', 'Robin')])
+bigrams = bigrams(text6)   # 二元分词
+bigramsDist = FreqDist(bigrams)    #给出字典，二元词组及其对应的出现次数
+print(bigramsDist[('Sir', 'Robin')])    #('Sir', 'Robin')出现的次数
 
-fourgrams = ngrams(text6, 4)
-#for fourgram in fourgrams:
+fourgrams = ngrams(text6, 4)     #四元分词
+#for fourgram in fourgrams:       #对分词结果进行迭代显示
 #    if fourgram[0] == 'coconut':
 #        print(fourgram)
 

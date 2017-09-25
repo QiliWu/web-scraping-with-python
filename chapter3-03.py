@@ -7,7 +7,7 @@ import datetime
 import random
 
 
-random.seed(datetime.datetime.now())
+random.seed(datetime.datetime.now())  #yeild a random num array based on the current time, so every time the random path is new.
 
 def getLinks(articleUrl):
 

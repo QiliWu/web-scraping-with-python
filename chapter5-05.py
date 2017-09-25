@@ -7,6 +7,7 @@ conn = pymysql.connect(host='127.0.0.1', port = 3306, user = 'root',
 cur = conn.cursor()
 cur.execute('USE scraping')
 
-cur.execute('SELECT * FROM pages WHERE id=1')
-print(cur.fetchone())
+cur.execute('SELECT * FROM pages WHERE id=2')
+print(cur.execute('SELECT * FROM pages WHERE id=2'))    # result:  1, means true
+print(cur.fetchone())     # the data with id = 2
 conn.close()

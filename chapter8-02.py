@@ -10,9 +10,9 @@ def wordListSum(wordList):
 def retrieveRandomWord(wordList):
     randIndex = randint(1, wordListSum(wordList))
     for word, value in wordList.items():
-        randIndex = randIndex - value
+        randIndex = randIndex - value   #每迭代一次，randIndex减去value, 所以randIndex一直在减小，直到小于0
         if randIndex <= 0:
-            print(word)
+            #print(word)
             return word
 
 def buildWordDict(text):
@@ -38,10 +38,11 @@ def buildWordDict(text):
     return wordDict
 
 text = str(urlopen("http://pythonscraping.com/files/inaugurationSpeech.txt").read(), 'utf-8')
-print(text)
+#print(text)
 wordDict = buildWordDict(text)
+print(wordDict)
 
-length = 5
+length = 100
 chain = ''
 currentWord = 'I'
 for i in range(0, length):

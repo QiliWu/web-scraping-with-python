@@ -14,7 +14,7 @@ def cleanInput(input):
     input = input.split(' ')
     for item in input:
         item = item.strip(string.punctuation)
-        if not isCommon(item):
+        if not isCommon(item.lower()):
             if item != '' or item.lower() in ['a','i']:
                 cleanInput.append(item)
     return cleanInput

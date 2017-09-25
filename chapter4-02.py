@@ -26,7 +26,8 @@ def getHistoryIPs(pageUrl):
     ipAddresses = soup.findAll('a',{'class':'mw-userlink mw-anonuserlink'})
     addresslist = set()
     for ipAddress in ipAddresses:
-        addresslist.add(ipAddress.get_text())
+        if ipAddress not in addresslist:
+            addresslist.add(ipAddress.get_text())
     return addresslist
 
 links = getLinks('/wiki/Python_(programming_language)')

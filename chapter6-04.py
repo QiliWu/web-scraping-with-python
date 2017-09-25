@@ -3,7 +3,7 @@ from io import StringIO
 import csv
 
 url = "http://pythonscraping.com/files/MontyPythonAlbums.csv"
-data = urlopen(url).read().decode('ascii', 'ignore')
+data = urlopen(url).read().decode('ascii', 'ignore')  #ignore: ignore unascii characters
 dataFile = StringIO(data)
 print(dataFile)
 csvReader = csv.reader(dataFile)

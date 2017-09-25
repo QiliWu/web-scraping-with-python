@@ -14,8 +14,8 @@ soup = BeautifulSoup(html,'html.parser')
 
 for link in soup.find('div',{'id':'bodyContent'}).findAll\
             ('a', {'href': re.compile("^(/wiki/)((?!:).)*$")}):
-
-    if 'href' in link.attrs:
+    print(link.attrs['href'])
+    if 'href' in link.attrs:   #do not need this step since all the <a> have href
         print(link.attrs['href'])
 
 
