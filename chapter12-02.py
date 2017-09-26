@@ -16,10 +16,10 @@ print('-'*40)
 print(driver2.get_cookies())
 driver2.delete_all_cookies()
 
-driver2.get("http://pythonscraping.com")
-driver2.implicitly_wait(3)
-print('-'*40)
-print(driver2.get_cookies())
+#driver2.get("http://pythonscraping.com")
+#driver2.implicitly_wait(3)
+#print('-'*40)
+#print(driver2.get_cookies())
 
 for cookie in savedcookies:
     driver2.add_cookie(cookie)

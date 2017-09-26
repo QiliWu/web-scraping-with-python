@@ -1,4 +1,3 @@
-from nltk.book import *
 from nltk import word_tokenize
 from nltk import pos_tag  #词性识别
 from nltk import sent_tokenize

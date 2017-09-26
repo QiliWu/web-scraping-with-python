@@ -44,4 +44,9 @@ try:
     searchDepth(344, 1, {}, 4)
     print("No solution found")
 except SolutionFound as e:
-    print(e.message)
+    print('22', e.message)
+
+    #TARGET 344 FOUND
+    #11 PAGE 1: 277
+    #11 PAGE 2: 3
+    #22 PAGE 2: 1

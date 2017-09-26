@@ -13,7 +13,7 @@ def cleanImage(imagePath):
     borderImage.save(imagePath)
 
 html = urlopen("http://www.pythonscraping.com/humans-only")
-soup = BeautifulSoup(html)
+soup = BeautifulSoup(html, 'html.parser')
 
 imageLocation = soup.find('img', {'title': 'Image CAPTCHA'})['src']
 forBuildId = soup.find('input', {'name':'form_build_id'})['value']

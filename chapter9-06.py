@@ -8,6 +8,8 @@ print('Cookie is set to: ')
 print(s.cookies.get_dict())
 print('-'*30)
 print('Going to profile page...')
-#s = session.post('http://pythonscraping.com/pages/cookies/profile.php')
-s = requests.post('http://pythonscraping.com/pages/cookies/profile.php')
+
+# both session and requests works
+s = session.post('http://pythonscraping.com/pages/cookies/profile.php')
+#s = requests.post('http://pythonscraping.com/pages/cookies/profile.php')
 print(s.text)
