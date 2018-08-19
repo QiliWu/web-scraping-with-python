@@ -12,7 +12,7 @@ soup = BeautifulSoup(html,'html.parser')
 #print (soup.head)    #bs4.element tag type
 #print (type(soup.head))
 #print (soup.head.text)
-#print (soup.head.get_text())
+#print (soup.head.get_text())   #text=property(get_text())
 
 namelist = soup.findAll('span',{'class':'green'})  #or ('span', class_='green')
 print (namelist)  # output a list, element contain tags

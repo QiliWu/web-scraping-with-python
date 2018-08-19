@@ -2,7 +2,7 @@ from PIL import Image
 import subprocess
 
 def cleanFile(filePath, newFilePath):
-    image = Image.open(...)
+    image = Image.open(filePath)
 
     image = image.point(lambda x: 0 if x<143 else 255)
     image.save(newFilePath)
@@ -14,4 +14,4 @@ def cleanFile(filePath, newFilePath):
     outputFile.close()
 
 
-cleanFile('text_2.jpg', 'text_2_clean.jpg')
+cleanFile(r'D:\03-CS\web scraping with python\time.jpg', r'D:\03-CS\web scraping with python\time_clean.jpg')
